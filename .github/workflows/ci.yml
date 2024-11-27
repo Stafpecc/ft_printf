@@ -1,4 +1,4 @@
-name: CI
+name: CI with Terraform
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     defaults:
       run:
         working-directory: .ft_printfTester
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,3 +24,30 @@ jobs:
 
       - name: Run tests
         run: TERM=xterm make
+
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.10.0
+
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: terraform
+
+      - name: Validate Terraform
+        run: terraform validate
+        working-directory: terraform
+
+      - name: Plan Terraform
+        run: terraform plan
+        working-directory: terraform
+
+      - name: Apply Terraform
+        run: terraform apply -auto-approve
+        working-directory: terraform
