@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/27 16:50:55 by tarini           ###   ########.fr       */
+/*   Created: 2024/11/27 16:33:41 by tarini            #+#    #+#             */
+/*   Updated: 2024/11/27 16:51:41 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <unistd.h>
+int    ft_putnbr(int n)
+{
+	unsigned int	size;
+	char	*num;
 
-int	ft_putchar(char s);
-int	ft_putstr(char *s);
-int	ft_putptr(void *ptr);
-int ft_putprct();
-int ft_putnbr(int n);
-
-
-#endif
+	size = 0;
+	num = ft_itoa(n) ;
+	size = ft_putstr(num) ;
+	free (num) ;
+	return (size);
+}

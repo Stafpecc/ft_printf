@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re norm docker-build docker-run docker-clean docker
+.PHONY: all clean fclean re docker-build docker-run docker-clean docker
 
 NAME = ft_printf
 
@@ -8,9 +8,11 @@ OBJS_DIR = objs/
 CFILES = printf \
 		putchar \
 		putstr \
-		putptr
+		putptr \
+		putnbr \
+		putprct
 
-INCLUDE = include/ft_printf.h
+INCLUDE = include
 MAKEFILE = Makefile
 
 RM = rm -f
@@ -40,9 +42,6 @@ fclean: clean
         $(RM) $(NAME)
 
 re : fclean all
-
-norm :
-	norminette $(SRC) $(INCLUDE)
 
 docker-build:
         docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .

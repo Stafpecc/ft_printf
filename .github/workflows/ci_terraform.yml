@@ -22,8 +22,17 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y make gcc valgrind
 
+      - name: Check norm code
+        run: |
+          if ! norminette; then
+            echo "Code does not follow the norm. Please fix the issues above.";
+            exit 1;
+          fi
+          
       - name: Run tests
         run: TERM=xterm make
+
+
 
   terraform:
     runs-on: ubuntu-latest
