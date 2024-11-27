@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re docker-build docker-run docker-clean docker
+.PHONY: all clean fclean re norm docker-build docker-run docker-clean docker
 
 NAME = ft_printf
 
@@ -10,7 +10,7 @@ CFILES = printf \
 		putstr \
 		putptr
 
-INCLUDE = ft_printf.h
+INCLUDE = include/ft_printf.h
 MAKEFILE = Makefile
 
 RM = rm -f
@@ -19,13 +19,11 @@ AR = ar -rcs
 
 CFLAGS = -Wall -Wextra -Werror 
 
-
 DOCKER_IMAGE = ft_printf
 DOCKER_TAG = latest
 
-SRC  = $(addprefix $(CFILES_DIR)/, $(addprefix ft_, $(CFILES), $(addsuffix .c, $(C_FILES))))
+SRC  = $(addprefix $(CFILES_DIR)/, $(addsuffix .c, $(addprefix ft_, $(CFILES))))
 OBJS = $(addprefix $(OBJS_DIR)/, $(CFILES:.c=.o))
-
 
 all: $(NAME)
 
@@ -42,6 +40,9 @@ fclean: clean
         $(RM) $(NAME)
 
 re : fclean all
+
+norm :
+	norminette $(SRC) $(INCLUDE)
 
 docker-build:
         docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
