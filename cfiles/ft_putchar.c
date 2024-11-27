@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:10:05 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/27 16:29:22 by tarini           ###   ########.fr       */
+/*   Updated: 2024/11/27 18:30:31 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char s)
+void	ft_putchar(char s, unsigned int *i)
 {
 	write(1, &s, 1);
-	return (1);
+	*i++;
 }

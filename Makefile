@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re docker-build docker-run docker-clean docker
+.PHONY: all clean fclean re docker-build docker-run docker-clean
 
 NAME = ft_printf
 
@@ -6,11 +6,11 @@ CFILES_DIR = cfiles/
 OBJS_DIR = objs/
 
 CFILES = printf \
-		putchar \
-		putstr \
-		putptr \
-		putnbr \
-		putprct
+	putchar \
+	putstr \
+	putptr \
+	putnbr \
+	putprct
 
 INCLUDE = include
 MAKEFILE = Makefile
@@ -25,15 +25,21 @@ DOCKER_IMAGE = ft_printf
 DOCKER_TAG = latest
 
 SRC  = $(addprefix $(CFILES_DIR)/, $(addsuffix .c, $(addprefix ft_, $(CFILES))))
-OBJS = $(addprefix $(OBJS_DIR)/, $(CFILES:.c=.o))
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(addprefix ft_, $(CFILES))))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	make -C $(INCLUDE)
+	cp include/libft.a .
+	mv libft.a $(NAME)
         $(CC) -o $@ $^
 
-%.o: %.c $(INCLUDE) $(MAKEFILE)
-        $(CC) $(CFLAGS) -c $< -o $@ 
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
+
+$(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
         $(RM) $(OBJS)

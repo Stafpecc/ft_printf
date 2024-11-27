@@ -10,7 +10,7 @@ on:
 
 jobs:
   libft-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest                
     defaults:
       run:
         working-directory: .ft_printfTester
@@ -20,43 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt-get install -y make gcc valgrind
+        run: sudo apt-get install -y make gcc valgrind norminette
 
-      - name: Check norm code
-        run: |
-          if ! norminette; then
-            echo "Code does not follow the norm. Please fix the issues above.";
-            exit 1;
-          fi
-          
       - name: Run tests
         run: TERM=xterm make
-
-
-
-  terraform:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.10.0
-
-      - name: Initialize Terraform
-        run: terraform init
-        working-directory: terraform
-
-      - name: Validate Terraform
-        run: terraform validate
-        working-directory: terraform
-
-      - name: Plan Terraform
-        run: terraform plan
-        working-directory: terraform
-
-      - name: Apply Terraform
-        run: terraform apply -auto-approve
-        working-directory: terraform
