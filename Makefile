@@ -2,10 +2,13 @@
 
 NAME = ft_printf
 
-CFILES = ft_printf.c \
-		ft_putchar.c \
-		ft_putstr.c \
-		ft_putptr.c
+CFILES_DIR = cfiles/
+OBJS_DIR = objs/
+
+CFILES = printf \
+		putchar \
+		putstr \
+		putptr
 
 INCLUDE = ft_printf.h
 MAKEFILE = Makefile
@@ -16,14 +19,18 @@ AR = ar -rcs
 
 CFLAGS = -Wall -Wextra -Werror 
 
-OBJS = $(CFILES:.c=.o)
+
 DOCKER_IMAGE = ft_printf
 DOCKER_TAG = latest
+
+SRC  = $(addprefix $(CFILES_DIR)/, $(addprefix ft_, $(CFILES), $(addsuffix .c, $(C_FILES))))
+OBJS = $(addprefix $(OBJS_DIR)/, $(CFILES:.c=.o))
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-        $(CC) -o $@ $^ -lncurses -lm
+        $(CC) -o $@ $^
 
 %.o: %.c $(INCLUDE) $(MAKEFILE)
         $(CC) $(CFLAGS) -c $< -o $@ 
