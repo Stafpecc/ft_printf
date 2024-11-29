@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putprct.c                                       :+:      :+:    :+:   */
+/*   ft_putnbrunsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:44:59 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/27 16:47:18 by tarini           ###   ########.fr       */
+/*   Created: 2024/11/29 14:57:58 by stafpec           #+#    #+#             */
+/*   Updated: 2024/11/29 15:05:05 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_putprct()
+int	ft_putnbrunsigned(unsigned int n)
 {
-	ft_putchar('%');
-	return(1);
+	int	count = 0;
+
+	if (n >= 10)
+		count += ft_putnbr_unsigned(n / 10);
+	count += ft_putchar((n % 10) + '0');
+	return (count);
 }

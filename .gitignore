@@ -1,4 +1,14 @@
+# fichier et dossier a ne pas push
+
 *.out
 *.swp
 *.a
 *.o
+.vscode
+
+# fichier et dossier a ne pas push sur 42
+
+#.ft_printTester
+#.github
+#ci.yml
+#Dockerfile

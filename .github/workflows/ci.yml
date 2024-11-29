@@ -1,4 +1,4 @@
-name: CI with Terraform
+name: CI
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt-get install -y make gcc valgrind norminette
+        run: sudo apt-get install -y make gcc valgrind 
 
       - name: Run tests
         run: TERM=xterm make

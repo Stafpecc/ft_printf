@@ -6,11 +6,11 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:47:49 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/21 11:25:50 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:14:48 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {

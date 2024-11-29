@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:33:41 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/27 18:30:31 by stafpec          ###   ########.fr       */
+/*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
+/*   Updated: 2024/11/29 15:27:08 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int    ft_putnbr(int n, unsigned int *i)
-{
-	unsigned int	size;
-	char	*num;
+# include <unistd.h>
 
-	size = 0;
-	num = ft_itoa(n) ;
-	size = ft_putstr(num, i) ;
-	free (num) ;
-	return (size);
-}
+# define LOW_HEXA "0123456789ABCDEF"
+# define UP_HEXA "0123456789abcdef"
+
+int	ft_putchar(char s);
+int	ft_putstr(char *str);
+int	ft_putptr(void *ptr);
+int	ft_putnbrbase(long n, const char *base, int signed_flag);
+int	ft_putnbrunsigned(unsigned int n);
+int	ft_printf(const char *format, ...);
+
+#endif

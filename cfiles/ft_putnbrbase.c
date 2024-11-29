@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbrbase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 15:17:52 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 15:22:49 by stafpec          ###   ########.fr       */
+/*   Created: 2024/11/29 14:43:26 by stafpec           #+#    #+#             */
+/*   Updated: 2024/11/29 15:09:51 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_putptr(void *ptr)
+int	ft_putnbrbase(long n, const char *base, int signed_flag)
 {
-	int	count = 0;
+	int				count = 0;
+	unsigned long	nb;
+	int				base_len;
 
-	if (!ptr)
-		return (ft_putstr("(nil)"));
-	count += ft_putstr("0x");
-	count += ft_putnbr_base((unsigned long)ptr, "0123456789abcdef");
+	base_len = ft_strlen(base);
+	if (base_len < 2)
+		return (0);
+	if (signed_flag && n < 0)
+	{
+		count += ft_putchar('-');
+		nb = -n;
+	}
+	else
+		nb = (unsigned long)n;
+	if (nb >= (unsigned long)base_len)
+		count += ft_putnbr_base(nb / base_len, base, 0);
+	count += ft_putchar(base[nb % base_len]);
 	return (count);
 }

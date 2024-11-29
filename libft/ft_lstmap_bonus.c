@@ -6,11 +6,11 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:45:54 by stafpec           #+#    #+#             */
-/*   Updated: 2024/11/21 12:06:02 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:13:04 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static t_list	*map_node(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

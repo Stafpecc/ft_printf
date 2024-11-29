@@ -6,12 +6,13 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:10:05 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/27 18:30:31 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 14:54:13 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char s, unsigned int *i)
+#include <unistd.h>
+
+int	ft_putchar(char s)
 {
-	write(1, &s, 1);
-	*i++;
+	return(write(1, &s, 1));
 }

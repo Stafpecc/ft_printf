@@ -6,11 +6,11 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:17:35 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/21 11:21:22 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:14:08 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

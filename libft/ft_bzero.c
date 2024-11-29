@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:22:27 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/17 13:46:28 by tarini           ###   ########.fr       */
+/*   Updated: 2024/11/29 15:22:49 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
