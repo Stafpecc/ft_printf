@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re docker-build docker-run docker-clean
 
-NAME 			= ft_printf.a
+NAME 			= libftprintf.a
 
 CFILES_DIR		= cfiles/
 OBJS_DIR		= objs/
