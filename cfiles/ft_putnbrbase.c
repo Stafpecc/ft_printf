@@ -6,11 +6,12 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 14:43:26 by stafpec           #+#    #+#             */
-/*   Updated: 2024/11/29 15:09:51 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:58:12 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 int	ft_putnbrbase(long n, const char *base, int signed_flag)
 {
@@ -29,7 +30,7 @@ int	ft_putnbrbase(long n, const char *base, int signed_flag)
 	else
 		nb = (unsigned long)n;
 	if (nb >= (unsigned long)base_len)
-		count += ft_putnbr_base(nb / base_len, base, 0);
+		count += ft_putnbrbase(nb / base_len, base, 0);
 	count += ft_putchar(base[nb % base_len]);
 	return (count);
 }

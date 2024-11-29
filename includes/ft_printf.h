@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 15:27:08 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 15:56:55 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 
 int	ft_putchar(char s);
 int	ft_putstr(char *str);
-int	ft_putptr(void *ptr);
 int	ft_putnbrbase(long n, const char *base, int signed_flag);
-int	ft_putnbrunsigned(unsigned int n);
 int	ft_printf(const char *format, ...);
 
 #endif

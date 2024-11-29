@@ -6,9 +6,11 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 12:22:27 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 15:22:49 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 16:01:07 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)
 {

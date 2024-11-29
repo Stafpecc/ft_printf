@@ -6,11 +6,12 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 15:09:31 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/11/29 16:16:06 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 #include <stdarg.h>
 
 int	ft_printf(const char *format, ...)
@@ -26,17 +27,17 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'd' || format[i] == 'i')
-				count += ft_putnbr_base(va_arg(args, int), "0123456789", 1);
+				count += ft_putnbrbase(va_arg(args, int), "0123456789", 1);
 			else if (format[i] == 'u')
-				count += ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 0);
+				count += ft_putnbrbase(va_arg(args, unsigned int), "0123456789", 0);
 			else if (format[i] == 'x')
-				count += ft_putnbr_base(va_arg(args, unsigned int), "LOW_HEXA", 0);
+				count += ft_putnbrbase(va_arg(args, unsigned int), "LOW_HEXA", 0);
 			else if (format[i] == 'X')
-				count += ft_putnbr_base(va_arg(args, unsigned int), "UP_HEXA", 0);
+				count += ft_putnbrbase(va_arg(args, unsigned int), "UP_HEXA", 0);
 			else if (format[i] == 'p')
 			{
 				count += write(1, "0x", 2);
-				count += ft_putnbr_base((unsigned long)va_arg(args, void *), "LOW_HEXA", 0);
+				count += ft_putnbrbase((unsigned long)va_arg(args, void *), "LOW_HEXA", 0);
 			}
 			else if (format[i] == '%')
 				count += ft_putchar('%');
@@ -52,3 +53,9 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+/*
+int main(void) {
+    ft_printf("Hello, world!\n");
+    return 0;
+}
+*/
