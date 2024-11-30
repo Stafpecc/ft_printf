@@ -13,7 +13,7 @@ CFILES = printf			\
 
 INCLUDE			= includes
 MAKEFILE 		= Makefile
-LIBFT			= $(LIBFT_DIR)libft.a
+LIBFT			= libft.a
 
 RM 				= rm -f
 CC				= cc
@@ -33,6 +33,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
+	mv $(LIBFT_DIR)$(LIBFT) .
 	$(AR) $@ $^ $(LIBFT)
 
 $(OBJS_DIR):
@@ -47,7 +48,8 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(RM) $(LIBFT)
+	$(MAKE) -C $(LIBFT_DIR) clean
 
 re : fclean all
 
