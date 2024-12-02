@@ -34,7 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
 	mv $(LIBFT_DIR)$(LIBFT) .
-	$(AR) $@ $^ $(LIBFT)
+	mv $(LIBFT) $(NAME)
+	$(AR) $@ $^
 
 $(OBJS_DIR):
 	mkdir -p $(OBJS_DIR)
@@ -48,8 +49,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) $(LIBFT)
-	$(MAKE) -C $(LIBFT_DIR) clean
 
 re : fclean all
 

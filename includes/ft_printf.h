@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 15:56:55 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/01 15:25:41 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 
-# define LOW_HEXA "0123456789ABCDEF"
-# define UP_HEXA "0123456789abcdef"
+# define UP_HEXA "0123456789ABCDEF"
+# define LOW_HEXA "0123456789abcdef"
 
 int	ft_putchar(char s);
 int	ft_putstr(char *str);

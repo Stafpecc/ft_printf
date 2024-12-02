@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/11/29 16:16:06 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/01 15:46:22 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,23 @@ int	ft_printf(const char *format, ...)
 			else if (format[i] == 'u')
 				count += ft_putnbrbase(va_arg(args, unsigned int), "0123456789", 0);
 			else if (format[i] == 'x')
-				count += ft_putnbrbase(va_arg(args, unsigned int), "LOW_HEXA", 0);
+				count += ft_putnbrbase(va_arg(args, unsigned int), LOW_HEXA, 0);
 			else if (format[i] == 'X')
-				count += ft_putnbrbase(va_arg(args, unsigned int), "UP_HEXA", 0);
+				count += ft_putnbrbase(va_arg(args, unsigned int), UP_HEXA, 0);
 			else if (format[i] == 'p')
 			{
-				count += write(1, "0x", 2);
-				count += ft_putnbrbase((unsigned long)va_arg(args, void *), "LOW_HEXA", 0);
+    			count += write(1, "0x", 2);
+    			count += ft_putnbrbase((unsigned long)va_arg(args, void *), LOW_HEXA, 0);
 			}
 			else if (format[i] == '%')
 				count += ft_putchar('%');
 			else if (format[i] == 'c')
 				count += ft_putchar(va_arg(args, int));
 			else if (format[i] == 's')
-				count += write(1, va_arg(args, char *), ft_strlen(va_arg(args, char *)));
+			{
+				char *str = va_arg(args, char *);
+				count += ft_putstr(str);
+			}
 		}
 		else
 			count += ft_putchar(format[i]);
@@ -55,7 +58,19 @@ int	ft_printf(const char *format, ...)
 }
 /*
 int main(void) {
-    ft_printf("Hello, world!\n");
+    ft_printf("%s\n", "Hello");
+	ft_printf("%s\n", NULL);
+
+	int x = 42;
+	ft_printf("%p\n", &x);
+	ft_printf("%p\n", NULL);
+
+	ft_printf("%x\n", 255);
+	ft_printf("%X\n", 255);
+	ft_printf("%x\n", 0);
+	
+	ft_printf("Int: %d, Str: %s, Hex: %x\n", 42, "test", 255);
+
     return 0;
 }
 */
