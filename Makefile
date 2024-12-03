@@ -3,7 +3,7 @@
 NAME 			= libftprintf.a
 
 CFILES_DIR		= cfiles/
-OBJS_DIR		= objs/
+OBJS_DIR		= .objs/
 LIBFT_DIR		= libft/
 
 CFILES = printf			\
@@ -16,6 +16,7 @@ MAKEFILE 		= Makefile
 LIBFT			= libft.a
 
 RM 				= rm -f
+RM_DIR			= rm -rf
 CC				= cc
 AR				= ar -rcs
 
@@ -44,7 +45,7 @@ $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM_DIR) $(OBJS_DIR)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean

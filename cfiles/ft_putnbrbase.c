@@ -6,7 +6,7 @@
 /*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 14:43:26 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/03 13:16:07 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/03 13:35:46 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,8 @@ int	ft_putnbrbase(long n, const char *base, int signed_flag)
 		return (-1);
 	return (++count);
 }
+
+
+
+
+
