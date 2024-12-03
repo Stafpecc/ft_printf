@@ -1,7 +1,17 @@
-FROM gcc:latest
-RUN apt-get update && apt-get install -y make valgrind && rm -rf /var/lib/apt/lists/*
+FROM debian:latest
+
 WORKDIR /app
-COPY . /app
-RUN make
+
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    gcc \
+    make \
+    git \
+    && apt-get clean
+
+COPY . /app/
+
 RUN make test
-CMD ["make", "install"]
+
+CMD ["make", "test"]

@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re test #docker-build docker-run docker-clean
+.PHONY: all clean fclean re test docker-build docker-run docker-clean
 
 NAME 			= libftprintf.a
 
@@ -75,11 +75,11 @@ fclean: clean
 
 re : fclean all
 
-#docker-build:
-#	docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
+docker-build:
+	docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
 
-#docker-run: docker-build
-#	docker run --rm -it $(DOCKER_IMAGE):$(DOCKER_TAG)
+docker-run: docker-build
+	docker run --rm -it $(DOCKER_IMAGE):$(DOCKER_TAG)
 
-#docker-clean:
-#	docker rmi -f $(DOCKER_IMAGE):$(DOCKER_TAG)
+docker-clean:
+	docker rmi -f $(DOCKER_IMAGE):$(DOCKER_TAG)
