@@ -47,7 +47,20 @@ $(NAME): $(OBJS)
 	mv $(LIBFT) $(NAME)
 	echo "$(PURPLE)Compilation of libftprintf.a in progress...$(RESET)"
 	$(AR) $@ $^
-	echo "$(GREEN)Compilation finished successfully!$(RESET)"
+
+	echo "$(GREEN)"
+	echo "┌───────────────────────────────────────────────────────┐"
+	echo "│      Compilation finished successfully! (⌐■_■)        │"
+	echo "└───────────────────────────────────────────────────────┘"
+
+	echo "                      ☆  *    .      ☆"
+	echo "                        ∧＿∧   ∩    * ☆"
+	echo "                 *  ☆ ( ・∀・)/ ."
+	echo "                  .  ⊂      ノ* ☆"
+	echo "                ☆ * (つ   ノ  .☆"
+	echo "                      (ノ"
+	
+	echo "$(RESET)"
 
 $(OBJS_DIR):
 	echo "$(PURPLE)Creating directory $(OBJS_DIR)...$(RESET)"
@@ -74,6 +87,18 @@ fclean: clean
 	echo "$(RED)Deleting $(NAME)...$(RESET)"
 	$(RM) $(NAME)
 	echo "$(GREEN)Deleting $(NAME) successfully!$(RESET)"
+	
+	echo "$(RED)"
+	echo "┌───────────────────────────────────────────────────────┐"
+	echo "│      Deletation finished successfully! (⌐■_■)         │"
+	echo "└───────────────────────────────────────────────────────┘"
+	
+	echo "                          ╱|、"
+	echo "                        (˚ˎ 。7"
+	echo "                         |、˜〵"
+	echo "                        じしˍ,)ノ"
+	
+	echo "$(RESET)"
 
 re : fclean all
 

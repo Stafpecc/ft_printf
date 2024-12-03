@@ -9,8 +9,7 @@
 
 # Files and directories to exclude from pushing to 42 (or a specific environment)
 #.ft_printTester/
-#.github/
-#ci.yml
+#.github/workflows/ci.yml
 #Dockerfile
 
 # Docker files
