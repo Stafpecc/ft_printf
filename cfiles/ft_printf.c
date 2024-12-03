@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/02 23:43:05 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:14:01 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int		count = 0;
-	int		tmp_count = 0;
-	int		i = 0;
+	int		count;
+	int		tmp_count;
+	int		i;
 	void	*ptr;
 	char	*str;
 
+	count = 0;
+	tmp_count = 0;
+	i = 0;
 	va_start(args, format);
 	while (format[i])
 	{
@@ -42,9 +45,9 @@ int	ft_printf(const char *format, ...)
 				ptr = va_arg(args, void *);
 				if (ptr == NULL)
 				{
-					if (write(1, "0x0", 3) == -1)
+					if (write(1, "(nil)", 5) == -1)
 						return (-1);
-					tmp_count = 3;
+					tmp_count = 5;
 				}
 				else
 				{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:10:05 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/01 15:45:19 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:15:13 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_putchar(char s)
 {
-	return(write(1, &s, 1));
+	return (write(1, &s, 1));
 }
