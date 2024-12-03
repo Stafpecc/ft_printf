@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbrbase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 14:43:26 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/03 13:35:46 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/03 14:37:10 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	ft_putnbrbase(long n, const char *base, int signed_flag)
 {
-	int				count;
-	unsigned long	nb;
-	int				base_len;
-	int				tmp;
+	int count;
+	unsigned long nb;
+	int base_len;
+	int tmp;
 
 	count = 0;
 	base_len = ft_strlen(base);
@@ -44,8 +44,3 @@ int	ft_putnbrbase(long n, const char *base, int signed_flag)
 		return (-1);
 	return (++count);
 }
-
-
-
-
-

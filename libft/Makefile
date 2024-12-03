@@ -1,3 +1,5 @@
+.SILENT:
+
 CFILES = ft_isdigit.c \
 	ft_isalpha.c \
 	ft_isalnum.c \
