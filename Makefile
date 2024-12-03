@@ -1,3 +1,5 @@
+.SILENT:
+
 .PHONY: all clean fclean re test docker-build docker-run docker-clean
 
 NAME 			= libftprintf.a
@@ -39,39 +41,39 @@ RESET           = \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "$(PURPLE)Compilation of libft in progress...$(RESET)"
-	@$(MAKE) -C $(LIBFT_DIR)
-	@mv $(LIBFT_DIR)$(LIBFT) .
-	@mv $(LIBFT) $(NAME)
-	@echo "$(PURPLE)Compilation of libftprintf.a in progress...$(RESET)"
-	@$(AR) $@ $^
-	@echo "$(GREEN)Compilation finished successfully!$(RESET)"
+	echo "$(PURPLE)Compilation of libft in progress...$(RESET)"
+	$(MAKE) -C $(LIBFT_DIR)
+	mv $(LIBFT_DIR)$(LIBFT) .
+	mv $(LIBFT) $(NAME)
+	echo "$(PURPLE)Compilation of libftprintf.a in progress...$(RESET)"
+	$(AR) $@ $^
+	echo "$(GREEN)Compilation finished successfully!$(RESET)"
 
 $(OBJS_DIR):
-	@echo "$(PURPLE)Creating directory $(OBJS_DIR)...$(RESET)"
-	@mkdir -p $(OBJS_DIR)
-	@echo "$(GREEN)Directory $(OBJS_DIR) created successfully!$(RESET)"
+	echo "$(PURPLE)Creating directory $(OBJS_DIR)...$(RESET)"
+	mkdir -p $(OBJS_DIR)
+	echo "$(GREEN)Directory $(OBJS_DIR) created successfully!$(RESET)"
 
 $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
-	@echo "$(PURPLE)Compiling $<...$(RESET)"
-	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(GREEN)$< completed successfully!$(RESET)"
+	echo "$(PURPLE)Compiling $<...$(RESET)"
+	$(CC) $(CFLAGS) -c $< -o $@
+	echo "$(GREEN)$< completed successfully!$(RESET)"
 
 test:
-	@echo "$(PURPLE)Running tests...$(RESET)"
-	@$(MAKE) -C $(TESTER_DIR)
-	@echo "$(GREEN)Tests completed successfully!$(RESET)"
+	echo "$(PURPLE)Running tests...$(RESET)"
+	$(MAKE) -C $(TESTER_DIR)
+	echo "$(GREEN)Tests completed successfully!$(RESET)"
 
 clean:
-	@echo "$(RED)Deleting object files...$(RESET)"
-	@$(RM_DIR) $(OBJS_DIR)
-	@$(MAKE) -C $(LIBFT_DIR) clean
-	@echo "$(GREEN)Deleting object files completed successfully!$(RESET)"
+	echo "$(RED)Deleting object files...$(RESET)"
+	$(RM_DIR) $(OBJS_DIR)
+	$(MAKE) -C $(LIBFT_DIR) clean
+	echo "$(GREEN)Deleting object files completed successfully!$(RESET)"
 
 fclean: clean
-	@echo "$(RED)Deleting $(NAME)...$(RESET)"
-	@$(RM) $(NAME)
-	@echo "$(GREEN)Deleting $(NAME) successfully!$(RESET)"
+	echo "$(RED)Deleting $(NAME)...$(RESET)"
+	$(RM) $(NAME)
+	echo "$(GREEN)Deleting $(NAME) successfully!$(RESET)"
 
 re : fclean all
 
