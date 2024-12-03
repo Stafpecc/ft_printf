@@ -1,6 +1,7 @@
 FROM gcc:latest
-RUN apt-get update && apt-get install -y make
+RUN apt-get update && apt-get install -y make valgrind && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY . .
+COPY . /app
 RUN make
-CMD ["./ft_printf"]
+RUN make test
+CMD ["make", "install"]
