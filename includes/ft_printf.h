@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/01 15:25:41 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/02 23:17:58 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # define UP_HEXA "0123456789ABCDEF"
 # define LOW_HEXA "0123456789abcdef"
+# define DECIMAL "0123456789"
 
 int	ft_putchar(char s);
 int	ft_putstr(char *str);

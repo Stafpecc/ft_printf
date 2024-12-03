@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/01 15:46:22 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/02 23:43:05 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		count = 0;
+	int		tmp_count = 0;
 	int		i = 0;
+	void	*ptr;
+	char	*str;
 
 	va_start(args, format);
 	while (format[i])
@@ -27,38 +30,53 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'd' || format[i] == 'i')
-				count += ft_putnbrbase(va_arg(args, int), "0123456789", 1);
+				tmp_count = ft_putnbrbase(va_arg(args, int), DECIMAL, 1);
 			else if (format[i] == 'u')
-				count += ft_putnbrbase(va_arg(args, unsigned int), "0123456789", 0);
+				tmp_count = ft_putnbrbase(va_arg(args, unsigned int), DECIMAL, 0);
 			else if (format[i] == 'x')
-				count += ft_putnbrbase(va_arg(args, unsigned int), LOW_HEXA, 0);
+				tmp_count = ft_putnbrbase(va_arg(args, unsigned int), LOW_HEXA, 0);
 			else if (format[i] == 'X')
-				count += ft_putnbrbase(va_arg(args, unsigned int), UP_HEXA, 0);
+				tmp_count = ft_putnbrbase(va_arg(args, unsigned int), UP_HEXA, 0);
 			else if (format[i] == 'p')
 			{
-    			count += write(1, "0x", 2);
-    			count += ft_putnbrbase((unsigned long)va_arg(args, void *), LOW_HEXA, 0);
+				ptr = va_arg(args, void *);
+				if (ptr == NULL)
+				{
+					if (write(1, "0x0", 3) == -1)
+						return (-1);
+					tmp_count = 3;
+				}
+				else
+				{
+					if (write(1, "0x", 2) == -1)
+						return (-1);
+					tmp_count = 2 + ft_putnbrbase((unsigned long)ptr, LOW_HEXA, 0);
+				}
 			}
 			else if (format[i] == '%')
-				count += ft_putchar('%');
+				tmp_count = ft_putchar('%');
 			else if (format[i] == 'c')
-				count += ft_putchar(va_arg(args, int));
+				tmp_count = ft_putchar(va_arg(args, int));
 			else if (format[i] == 's')
 			{
-				char *str = va_arg(args, char *);
-				count += ft_putstr(str);
+				str = va_arg(args, char *);
+				tmp_count = ft_putstr(str);
 			}
 		}
 		else
-			count += ft_putchar(format[i]);
+			tmp_count = ft_putchar(format[i]);
+		if (tmp_count == -1)
+			return (-1);
+		count += tmp_count;
 		i++;
 	}
 	va_end(args);
 	return (count);
 }
+
 /*
 int main(void) {
-    ft_printf("%s\n", "Hello");
+	ft_printf("%s\n", "Hello");
 	ft_printf("%s\n", NULL);
 
 	int x = 42;
@@ -71,6 +89,6 @@ int main(void) {
 	
 	ft_printf("Int: %d, Str: %s, Hex: %x\n", 42, "test", 255);
 
-    return 0;
+	return 0;
 }
 */
