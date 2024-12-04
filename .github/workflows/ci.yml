@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest                
     defaults:
       run:
-        working-directory: .
+        working-directory: .ft_printfTester
 
     steps:
       - name: Checkout code
@@ -23,4 +23,4 @@ jobs:
         run: sudo apt-get install -y make gcc valgrind 
 
       - name: Run tests
-        run: TERM=xterm make test
+        run: TERM=xterm make
