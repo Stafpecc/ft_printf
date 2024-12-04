@@ -52,12 +52,12 @@ $(NAME): $(OBJS)
 		mv $(LIBFT) $(NAME)
 
 	echo "$(PURPLE)Rename $(LIBFT) to $(NAME)$(RESET)"
-	echo "$(GREEN)Compilation of $(LIBFT) finished successfully$(RESET)"
+	echo "$(GREEN)Compilation of $(LIBFT) completed successfully$(RESET)"
 	echo "$(PURPLE)Compilation of $(NAME) in progress...$(RESET)"
 
 		$(AR) $@ $^
 
-	echo "$(GREEN)Compilation of $(NAME) finished successfully$(RESET)"
+	echo "$(GREEN)Compilation of $(NAME) completed successfully$(RESET)"
 
 	echo "$(GREEN)"
 	echo "┌───────────────────────────────────────────────────────────┐"
@@ -123,7 +123,7 @@ fclean: clean
 
 		$(RM) $(NAME)
 
-	echo "$(GREEN)Deleting $(NAME) successfully!$(RESET)"
+	echo "$(GREEN)Deleting $(NAME) completed successfully!$(RESET)"
 	
 	echo "$(RED)"
 	echo "┌──────────────────────────────────────────────────────────┐"
