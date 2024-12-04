@@ -55,7 +55,7 @@ $(NAME): $(OBJS)
 	echo "$(GREEN)Compilation of $(LIBFT) finished successfully$(RESET)"
 	echo "$(PURPLE)Compilation of $(NAME) in progress...$(RESET)"
 
-	$(AR) $@ $^
+		$(AR) $@ $^
 
 	echo "$(GREEN)Compilation of $(NAME) finished successfully$(RESET)"
 
