@@ -1,6 +1,6 @@
 .SILENT:
 
-.PHONY: all clean fclean main re #test docker-build docker-run docker-clean
+.PHONY: all clean fclean re #main test docker-build docker-run docker-clean
 
 NAME 			= libftprintf.a
 EXEC			= libftprintf.out
@@ -17,7 +17,6 @@ CFILES = printf			\
 	putnbrbase			
 
 INCLUDE			= includes
-MAKEFILE 		= Makefile
 LIBFT			= libft.a
 MAIN			= main.c
 
@@ -42,7 +41,6 @@ RED             = \033[1;31m
 RESET           = \033[0m
 
 all: $(NAME)
-
 
 $(NAME): $(OBJS)
 	echo "$(PURPLE)Compilation of libft in progress...$(RESET)"
@@ -85,7 +83,7 @@ $(OBJS_DIR):
 	echo "$(GREEN)Directory $(OBJS_DIR) created successfully!$(RESET)"
 
 
-$(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
+$(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) | $(OBJS_DIR)
 	echo "$(PURPLE)Compiling $<...$(RESET)"
 
 		$(CC) $(CFLAGS) -c $< -o $@
@@ -111,12 +109,29 @@ $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
 
 # 		$(MAKE) fclean
 
-main: all
-	echo "$(PURPLE)Compiling main program...$(RESET)"
+# $(EXEC): 
+# 	echo "$(PURPLE)Compiling main program...$(RESET)"
 
-		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
+# 		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
 
-	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"	
+# 	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"
+# 	echo "$(PURPLE)Execute $(EXEC)...$(RESET)"
+
+
+# main: all $(MAIN) $(INCLUDE) $(EXEC)
+# 	echo "$(PURPLE)"
+# 	echo "─────────────────────────────────────────────────"
+
+# 		./$(EXEC)
+
+# 	echo "─────────────────────────────────────────────────"	
+# 	echo "$(RESET)"
+# 	echo "$(GREEN)Exec of $(EXEC) completed successfully!$(RESET)"
+# 	echo "$(RED)Deleting $(EXEC)...$(RESET)"
+
+# 		$(RM) $(EXEC)
+
+# 	echo "$(GREEN)Deleting $(EXEC) completed successfully!$(RESET)"	
 
 
 clean:
@@ -132,7 +147,6 @@ fclean: clean
 	echo "$(RED)Deleting $(NAME)...$(RESET)"
 
 		$(RM) $(NAME)
-		$(RM) $(EXEC)
 
 	echo "$(GREEN)Deleting $(NAME) completed successfully!$(RESET)"
 	
