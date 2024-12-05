@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/03 13:29:49 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/05 14:48:48 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_putchar(char s);
 int	ft_putstr(char *str);
 int	ft_putnbrbase(long n, const char *base, int signed_flag);
 int	ft_printf(const char *format, ...);
-int ft_putnbrbase_sign(int signed_flag, int	*count, unsigned long *nb, long n);
+int	ft_putnbrbase_sign(int signed_flag, unsigned long *nb, int *count, long n);
 
 #endif

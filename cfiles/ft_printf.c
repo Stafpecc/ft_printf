@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/03 14:51:01 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/05 15:41:34 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-/*
-int main(void) {
-	ft_printf("%s\n", "Hello");
-	ft_printf("%s\n", NULL);
-
-	int x = 42;
-	ft_printf("%p\n", &x);
-	ft_printf("%p\n", NULL);
-
-	ft_printf("%x\n", 255);
-	ft_printf("%X\n", 255);
-	ft_printf("%x\n", 0);
-	
-	ft_printf("Int: %d, Str: %s, Hex: %x\n", 42, "test", 255);
-
-	return 0;
-}
-*/

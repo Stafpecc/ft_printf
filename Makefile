@@ -1,8 +1,10 @@
 .SILENT:
 
-.PHONY: all clean fclean re #test docker-build docker-run docker-clean
+.PHONY: all clean fclean main re #test docker-build docker-run docker-clean
 
 NAME 			= libftprintf.a
+EXEC			= libftprintf.out
+NAME_EXEC		= libftprintf
 
 CFILES_DIR		= cfiles/
 OBJS_DIR		= .objs/
@@ -17,6 +19,7 @@ CFILES = printf			\
 INCLUDE			= includes
 MAKEFILE 		= Makefile
 LIBFT			= libft.a
+MAIN			= main.c
 
 RM 				= rm -f
 RM_DIR			= rm -rf
@@ -108,6 +111,13 @@ $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) $(MAKEFILE) | $(OBJS_DIR)
 
 # 		$(MAKE) fclean
 
+main: all
+	echo "$(PURPLE)Compiling main program...$(RESET)"
+
+		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
+
+	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"	
+
 
 clean:
 	echo "$(RED)Deleting object files...$(RESET)"
@@ -122,6 +132,7 @@ fclean: clean
 	echo "$(RED)Deleting $(NAME)...$(RESET)"
 
 		$(RM) $(NAME)
+		$(RM) $(EXEC)
 
 	echo "$(GREEN)Deleting $(NAME) completed successfully!$(RESET)"
 	
