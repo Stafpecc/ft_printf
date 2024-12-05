@@ -32,8 +32,11 @@ CFLAGS 			= -Wall -Wextra -Werror
 DOCKER_IMAGE 	= ft_printf
 DOCKER_TAG		= latest
 
-SRC				= $(addprefix $(CFILES_DIR), $(addsuffix .c, $(addprefix ft_, $(CFILES))))
-OBJS 			= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(addprefix ft_, $(CFILES))))
+# SRC			= $(addprefix $(CFILES_DIR), $(addsuffix .c, $(addprefix ft_, $(CFILES))))
+# OBJS 			= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(addprefix ft_, $(CFILES))))
+
+SRC				= $(patsubst %, cfiles/ft_%.c, $(CFILES))
+OBJS			= $(patsubst cfiles/%.c, .objs/%.o, $(SRC))
 
 PURPLE          = \033[1;35m
 GREEN           = \033[1;32m
@@ -109,16 +112,14 @@ $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) | $(OBJS_DIR)
 
 # 		$(MAKE) fclean
 
-# $(EXEC): 
+
+# main: all $(MAIN) $(INCLUDE)
 # 	echo "$(PURPLE)Compiling main program...$(RESET)"
 
 # 		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
 
 # 	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"
 # 	echo "$(PURPLE)Execute $(EXEC)...$(RESET)"
-
-
-# main: all $(MAIN) $(INCLUDE) $(EXEC)
 # 	echo "$(PURPLE)"
 # 	echo "─────────────────────────────────────────────────"
 
