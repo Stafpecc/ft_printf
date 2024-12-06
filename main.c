@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:41:41 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/06 01:20:24 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/06 15:27:29 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include "includes/ft_printf.h"
 
+/*
 int	main(void) {
 	int x;
 
@@ -49,4 +50,4 @@ int	main(void) {
 	printf(" -> printf: %d\n\n", printf("%%"));
 
 	return 0;
-}
+}*/
