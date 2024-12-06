@@ -113,26 +113,26 @@ $(OBJS_DIR)%.o: $(CFILES_DIR)%.c $(INCLUDE) | $(OBJS_DIR)
 # 		$(MAKE) fclean
 
 
-# main: all $(MAIN) $(INCLUDE)
-# 	echo "$(PURPLE)Compiling main program...$(RESET)"
+main: all $(MAIN) $(INCLUDE)
+	echo "$(PURPLE)Compiling main program...$(RESET)"
 
-# 		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
+		$(CC) $(CFLAGS) -o $(EXEC) $(MAIN) -L. -lftprintf
 
-# 	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"
-# 	echo "$(PURPLE)Execute $(EXEC)...$(RESET)"
-# 	echo "$(PURPLE)"
-# 	echo "─────────────────────────────────────────────────"
+	echo "$(GREEN)$(EXEC) completed successfully!$(RESET)"
+	echo "$(PURPLE)Execute $(EXEC)...$(RESET)"
+	echo "$(PURPLE)"
+	echo "─────────────────────────────────────────────────"
 
-# 		./$(EXEC)
+		./$(EXEC)
 
-# 	echo "─────────────────────────────────────────────────"	
-# 	echo "$(RESET)"
-# 	echo "$(GREEN)Exec of $(EXEC) completed successfully!$(RESET)"
-# 	echo "$(RED)Deleting $(EXEC)...$(RESET)"
+	echo "─────────────────────────────────────────────────"	
+	echo "$(RESET)"
+	echo "$(GREEN)Exec of $(EXEC) completed successfully!$(RESET)"
+	echo "$(RED)Deleting $(EXEC)...$(RESET)"
 
-# 		$(RM) $(EXEC)
+		$(RM) $(EXEC)
 
-# 	echo "$(GREEN)Deleting $(EXEC) completed successfully!$(RESET)"	
+	echo "$(GREEN)Deleting $(EXEC) completed successfully!$(RESET)"	
 
 
 clean:

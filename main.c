@@ -1,34 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:41:41 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/05 15:45:33 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/06 01:20:24 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 #include "includes/ft_printf.h"
 
-int main(void) {
-    int x;
-	ft_printf("%s\n", "Hello");
-	ft_printf("%s\n", NULL);
+int	main(void) {
+	int x;
+
+	printf(" -> ft_printf: %d\n", ft_printf("%s", "Hello"));
+	printf(" -> printf: %d\n\n", printf("%s", "Hello"));
+
+	printf(" -> ft_printf: %d\n", ft_printf("%s", NULL));
+	printf(" -> printf: %d\n\n", printf("%s", (char *)NULL));
 
 	x = 42;
-	ft_printf("%p\n", &x);
-	ft_printf("%p\n", NULL);
+	printf(" -> ft_printf: %d\n", ft_printf("%p", &x));
+	printf(" -> printf: %d\n\n", printf("%p", &x));
 
-	ft_printf("%x\n", 255);
-	ft_printf("%X\n", 255);
-	ft_printf("%x\n", 0);
-	
-	ft_printf("Int: %d, Str: %s, Hex: %x\n", 42, "test", 255);
+	printf(" -> ft_printf: %d\n", ft_printf("%p", NULL));
+	printf(" -> printf: %d\n\n", printf("%p", NULL));
 
-	ft_printf("0\n");
-	
+	printf(" -> ft_printf: %d\n", ft_printf("%x", 255));
+	printf(" -> printf: %d\n\n", printf("%x", 255));
+
+	printf(" -> ft_printf: %d\n", ft_printf("%X", 255));
+	printf(" -> printf: %d\n\n", printf("%X", 255));
+
+	printf(" -> ft_printf: %d\n", ft_printf("%x", 0));
+	printf(" -> printf: %d\n\n", printf("%x", 0));
+
+	printf(" -> ft_printf: %d\n", ft_printf("Int: %d, Str: %s, Hex: %x", 42, "test", 255));
+	printf(" -> printf: %d\n\n", printf("Int: %d, Str: %s, Hex: %x", 42, "test", 255));
+
+	printf(" -> ft_printf: %d\n", ft_printf("0"));
+	printf(" -> printf: %d\n\n", printf("0"));
+
+	printf(" -> ft_printf: %d\n", ft_printf("%%"));
+	printf(" -> printf: %d\n\n", printf("%%"));
+
 	return 0;
 }
