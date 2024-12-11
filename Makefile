@@ -14,7 +14,8 @@ TESTER_DIR		= .ft_printfTester/
 CFILES = printf			\
 	putchar				\
 	putstr				\
-	putnbrbase			
+	putnbrbase			\
+	handle	
 
 INCLUDE			= includes
 LIBFT			= libft.a

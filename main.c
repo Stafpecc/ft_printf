@@ -6,17 +6,23 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:41:41 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/06 15:27:29 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/11 11:38:43 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <string.h>
 #include <stdio.h>
 #include "includes/ft_printf.h"
 
-/*
 int	main(void) {
 	int x;
+
+	printf(" -> ft_printf: %d\n", ft_printf("%c%c%c%c", 'a', 'b', 'c', 'd'));
+	printf(" -> ft_printf: %d\n", printf("%c%c%c%c", 'a', 'b', 'c', 'd'));
+
+	printf(" -> ft_printf: %d\n", ft_printf("%c %d %c %d", 'a', 42, 'b', 99));
+	printf(" -> ft_printf: %d\n", printf("%c %d %c %d", 'a', 42, 'b', 99));
 
 	printf(" -> ft_printf: %d\n", ft_printf("%s", "Hello"));
 	printf(" -> printf: %d\n\n", printf("%s", "Hello"));
@@ -40,8 +46,10 @@ int	main(void) {
 	printf(" -> ft_printf: %d\n", ft_printf("%x", 0));
 	printf(" -> printf: %d\n\n", printf("%x", 0));
 
-	printf(" -> ft_printf: %d\n", ft_printf("Int: %d, Str: %s, Hex: %x", 42, "test", 255));
-	printf(" -> printf: %d\n\n", printf("Int: %d, Str: %s, Hex: %x", 42, "test", 255));
+	printf(" -> ft_printf: %d\n", ft_printf("Int: %d, Str: %s, Hex: %x"
+				, 42, "test", 255));
+	printf(" -> printf: %d\n\n", printf("Int: %d, Str: %s, Hex: %x"
+				, 42, "test", 255));
 
 	printf(" -> ft_printf: %d\n", ft_printf("0"));
 	printf(" -> printf: %d\n\n", printf("0"));
@@ -50,4 +58,4 @@ int	main(void) {
 	printf(" -> printf: %d\n\n", printf("%%"));
 
 	return 0;
-}*/
+}

@@ -6,7 +6,7 @@
 /*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/05 14:48:48 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/11 13:46:02 by stafpec          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
+# include <stdarg.h>
 
 # define UP_HEXA "0123456789ABCDEF"
 # define LOW_HEXA "0123456789abcdef"
 # define DECIMAL "0123456789"
 
-int	ft_putchar(char s);
-int	ft_putstr(char *str);
-int	ft_putnbrbase(long n, const char *base, int signed_flag);
-int	ft_printf(const char *format, ...);
-int	ft_putnbrbase_sign(int signed_flag, unsigned long *nb, int *count, long n);
+int		ft_printf(const char *format, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_putnbrbase(long n, const char *base, int signed_flag);
+int		handle_pointer(void *ptr);
+int		handle_conversion(const char format, va_list args);
+int		process_format(const char *format, va_list args, int *count);
 
 #endif
