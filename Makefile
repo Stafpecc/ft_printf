@@ -1,6 +1,6 @@
 .SILENT:
 
-.PHONY: all clean fclean re #main test docker-build docker-run docker-clean
+.PHONY: all clean fclean re main #test docker-build docker-run docker-clean
 
 NAME 			= libftprintf.a
 EXEC			= libftprintf.out
@@ -32,9 +32,6 @@ CFLAGS 			= -Wall -Wextra -Werror
 
 DOCKER_IMAGE 	= ft_printf
 DOCKER_TAG		= latest
-
-# SRC			= $(addprefix $(CFILES_DIR), $(addsuffix .c, $(addprefix ft_, $(CFILES))))
-# OBJS 			= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(addprefix ft_, $(CFILES))))
 
 SRC				= $(patsubst %, cfiles/ft_%.c, $(CFILES))
 OBJS			= $(patsubst cfiles/%.c, .objs/%.o, $(SRC))

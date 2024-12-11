@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:41:41 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/11 11:38:43 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/11 14:04:10 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+/*
 #include <string.h>
 #include <stdio.h>
 #include "includes/ft_printf.h"
@@ -51,11 +51,11 @@ int	main(void) {
 	printf(" -> printf: %d\n\n", printf("Int: %d, Str: %s, Hex: %x"
 				, 42, "test", 255));
 
-	printf(" -> ft_printf: %d\n", ft_printf("0"));
-	printf(" -> printf: %d\n\n", printf("0"));
+	printf(" -> ft_printf: %d\n", ft_printf(0));
+	printf(" -> printf: %d\n\n", printf(0));
 
-	printf(" -> ft_printf: %d\n", ft_printf("%%"));
-	printf(" -> printf: %d\n\n", printf("%%"));
+	printf(" -> ft_printf: %d\n", ft_printf("%"));
 
 	return 0;
 }
+*/
