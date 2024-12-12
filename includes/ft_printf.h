@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:13 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/11 13:46:02 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/12 14:40:06 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int		ft_printf(const char *format, ...);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbrbase(long n, const char *base, int signed_flag);
-int		handle_pointer(void *ptr);
 int		handle_conversion(const char format, va_list args);
-int		process_format(const char *format, va_list args, int *count);
 
 #endif

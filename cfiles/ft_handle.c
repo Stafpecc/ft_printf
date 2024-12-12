@@ -6,23 +6,23 @@
 /*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:42:50 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/11 14:04:01 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/12 14:39:59 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	handle_pointer(void *ptr)
+static int	handle_pointer(void *ptr)
 {
 	int	tmp_count;
 
 	if (ptr == NULL)
 	{
-		if (write(1, "(nil)", 5) == -1)
+		if (ft_putstr("(nil)") == -1)
 			return (-1);
 		return (5);
 	}
-	if (write(1, "0x", 2) == -1)
+	if (ft_putstr("0x") == -1)
 		return (-1);
 	tmp_count = 2 + ft_putnbrbase((unsigned long)ptr, LOW_HEXA, 0);
 	return (tmp_count);

@@ -6,7 +6,7 @@
 /*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:41:41 by stafpec           #+#    #+#             */
-/*   Updated: 2024/12/11 14:04:10 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/12 14:37:15 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@
 int	main(void) {
 	int x;
 
+	printf(" -> ft_printf: %d\n", ft_printf("a"));
+	printf(" -> printf: %d\n\n", printf("a"));
+
 	printf(" -> ft_printf: %d\n", ft_printf("%c%c%c%c", 'a', 'b', 'c', 'd'));
-	printf(" -> ft_printf: %d\n", printf("%c%c%c%c", 'a', 'b', 'c', 'd'));
+	printf(" -> printf: %d\n\n", printf("%c%c%c%c", 'a', 'b', 'c', 'd'));
 
 	printf(" -> ft_printf: %d\n", ft_printf("%c %d %c %d", 'a', 42, 'b', 99));
-	printf(" -> ft_printf: %d\n", printf("%c %d %c %d", 'a', 42, 'b', 99));
+	printf(" -> printf: %d\n\n", printf("%c %d %c %d", 'a', 42, 'b', 99));
 
 	printf(" -> ft_printf: %d\n", ft_printf("%s", "Hello"));
 	printf(" -> printf: %d\n\n", printf("%s", "Hello"));

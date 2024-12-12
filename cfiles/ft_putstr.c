@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stafpec <stafpec@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:12:35 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/02 23:24:16 by stafpec          ###   ########.fr       */
+/*   Updated: 2024/12/12 14:25:03 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@ int	ft_putstr(char *str)
 {
 	if (!str)
 		return (ft_putstr("(null)"));
-	return (write(1, str, ft_strlen(str)));
+	if (write(1, str, ft_strlen(str)) == -1)
+		return (-1);
+	return (ft_strlen(str));
 }

@@ -156,7 +156,7 @@ fclean: clean
 	
 	echo "                          ╱|、"
 	echo "                        (˚ˎ 。7"
-	echo "                         |、˜〵"
+	echo "                         |、˜|"
 	echo "                        じしˍ,)ノ"
 	
 	echo "$(RESET)"

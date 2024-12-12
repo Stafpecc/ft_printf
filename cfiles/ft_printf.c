@@ -6,26 +6,31 @@
 /*   By: tarini <tarini@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:04:17 by tarini            #+#    #+#             */
-/*   Updated: 2024/12/11 14:05:14 by tarini           ###   ########.fr       */
+/*   Updated: 2024/12/12 14:39:38 by tarini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../includes/libft.h"
 
-int	process_format(const char *format, va_list args, int *count)
+static int	process_format(const char *format, va_list args, int *count)
 {
 	int	i;
 
 	i = 0;
-	if (!format || !format[i + 1])
+	if (!format)
 		return (-1);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%')
 		{
-			*count += handle_conversion(format[i + 1], args);
-			i++;
+			if (format[i + 1])
+			{
+				*count += handle_conversion(format[i + 1], args);
+				i++;
+			}
+			else
+				return (-1);
 		}
 		else
 			*count += ft_putchar(format[i]);
